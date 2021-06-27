@@ -44,12 +44,12 @@ module.exports = {
                     let staff_role = reaction.message.guild.roles.cache.find((role) => {return role.name === `Staff`})
                     let helper_role = reaction.message.guild.roles.cache.find((role) => {return role.name === `Helper`})
                     let everyone = reaction.message.guild.roles.cache.find(r => r.name === 'Joueur');
-                    if(reaction.message.guild.channels.cache.find((channel) => {return channel.name === `support-${user.id}`}))
+                    if(reaction.message.guild.channels.cache.find((channel) => {return channel.name === `support-${user.tag}`}))
                     {
                         user.send('Vous avez deja ouvert un ticket pour le support. Veuillez d\'abord fermer ce dernier avant de recommencer!');
                         return;
                     }
-                    reaction.message.guild.channels.create(`support-${user.id}`, { type: "text"}).then(channel => {
+                    reaction.message.guild.channels.create(`support-${user.tag}`, { type: "text"}).then(channel => {
                         channel.setParent("858510532118052886");
                         channel.overwritePermissions([
                             {
@@ -71,7 +71,7 @@ module.exports = {
                         ]);
                         channel.send(`${staff_role} ${helper_role}`);
                         const embed = new MessageEmbed()
-                        .setAuthor(`Ticket ${user.id}`, 'https://i.imgur.com/wSTFkRM.png')
+                        .setAuthor(`Ticket ${user.tag}`, 'https://i.imgur.com/VgVtVns.png')
                         .setDescription('**Vous avez ouvert un ticket, merci d\'indiquer les informations suivantes :**\n\n\n Pseudo en jeu :\n\n  Personne(s) impliqué(s) :\n\n  Explication du problème : ')
                         .addFields([
                             {name: '\u200B', value: 'Quelqu\'un vous répondra dans les plus brefs délai'}
