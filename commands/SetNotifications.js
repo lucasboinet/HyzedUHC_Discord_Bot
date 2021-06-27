@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { notifications_channel, notifications_icons } = require('../config.json');
+const { notifications_channel, gamemodes } = require('../config.json');
 
 module.exports = {
     name: 'setnotif',
@@ -9,20 +9,20 @@ module.exports = {
         {
             if(message.channel.id == notifications_channel)
             {
+                let fields = [];
+                gamemodes.forEach(gamemode => {
+                    fields.push({ name: '\u200B', value: `${gamemode.icon} - ${gamemode.text}`},)
+                });
                 const embed = new MessageEmbed()
-                .setAuthor('Notifications',  'https://i.imgur.com/wSTFkRM.png')
+                .setAuthor('Notifications',  'https://i.imgur.com/VgVtVns.png')
                 .setDescription('> Réagis à ce message pour choisir tes notifications')
-                .addFields(
-                    { name: '\u200B', value: `${notifications_icons[0]} - Loup Garous UHC`},
-                    { name: '\u200B', value: `${notifications_icons[1]} - Demon Slayer UHC`},
-                    { name: '\u200B', value: `${notifications_icons[2]} - Attack On Titans UHC`},
-                )
+                .addFields(fields)
                 .setColor("#9B59B6")
 
                 message.channel.bulkDelete(99).then(() => {
                     message.channel.send(embed).then((msg) => {
-                        notifications_icons.forEach(icon => {
-                            msg.react(icon);
+                        gamemodes.forEach(g => {
+                            msg.react(g.icon);
                         });
                     })
                 });

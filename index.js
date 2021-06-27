@@ -1,7 +1,7 @@
 const fs = require('fs');
 const discord = require('discord.js');
 const { token } = require('./token.json');
-const { prefix, notifications_channel } = require('./config.json');
+const { prefix, notifications_channel, support_channel } = require('./config.json');
 const client = new discord.Client();
 
 client.commands = new discord.Collection();
@@ -12,8 +12,9 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-client.once('ready', () => {
-    console.log("ready")
+client.once('ready', (c) => {
+    client.channels.cache.get(support_channel).send('!setsupport');
+    client.channels.cache.get(notifications_channel).send('!setnotif');
 })
 
 client.on('message', message => {

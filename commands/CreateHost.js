@@ -10,10 +10,10 @@ module.exports = {
             if(message.channel.id != games_channel) return;
 
             const embed = new MessageEmbed()
-                .setAuthor('Annonce Game', 'https://i.imgur.com/wSTFkRM.png')
+                .setAuthor('Annonce Game', 'https://i.imgur.com/VgVtVns.png')
                 .setTitle(`Host de ${message.author.username}`)
                 .setColor("#9B59B6")
-                .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+                .setThumbnail('https://i.imgur.com/VgVtVns.png')
                 .setFooter('IP: play.hyzed.fr | Mumble: /mumble')
             
             message.channel.send(embed);

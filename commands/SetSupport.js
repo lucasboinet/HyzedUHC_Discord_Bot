@@ -10,7 +10,7 @@ module.exports = {
             if(message.channel.id == support_channel)
             {
                 const embed = new MessageEmbed()
-                .setAuthor('Support',  'https://i.imgur.com/wSTFkRM.png')
+                .setAuthor('Support', 'https://i.imgur.com/VgVtVns.png')
                 .setDescription('> Pour ouvrir un ticket, veuillez réagir à ce message')
                 .setColor("#9B59B6")
 
