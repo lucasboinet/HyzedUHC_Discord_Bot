@@ -1,6 +1,7 @@
 const fs = require('fs');
 const discord = require('discord.js');
-const { token, prefix, notifications_channel } = require('./config.json');
+const { token } = require('./token.json');
+const { prefix, notifications_channel } = require('./config.json');
 const client = new discord.Client();
 
 client.commands = new discord.Collection();
