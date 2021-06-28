@@ -46,7 +46,7 @@ module.exports = {
                 .addFields([
                     { name: 'Mode de jeu : ', value: `${gamemode.icon} ${gamemode.text}` },
                     { name: 'Date : ', value: `🕒 ${dateMessage}` },
-                    { name: 'Scénarios et règles : ', value: `📚 ${dateMessage}` },
+                    { name: 'Scénarios et règles : ', value: `📚 Voir channel #règles` },
                     { name: 'IP du serveur : ', value: `🎮 play.hyzed.fr` },
                     { name: 'Mumble : ', value: `☎️ 37.187.48.175:1030` },
                     { name: '\u200B', value: '\u200B' }
