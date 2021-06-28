@@ -3,9 +3,10 @@
     "games_channel": "858516273172316201",
     "notifications_channel": "858631162510573599",
     "support_channel": "858663419279310899",
+    "rules_channel": "859134809137479680",
     "gamemodes": [
-        {"icon": "🟧", "text": "Loup Garous UHC"},
-        {"icon": "🟩", "text": "Demon Slayer UHC"},
-        {"icon": "🟪", "text": "Attack On Titan UHC"}
+        {"icon": "🟧", "text": "Loup Garous UHC", "slug": "lg"},
+        {"icon": "🟩", "text": "Demon Slayer UHC", "slug": "ds"},
+        {"icon": "🟪", "text": "Attack On Titan UHC", "slug": "aot"}
     ]
 }
