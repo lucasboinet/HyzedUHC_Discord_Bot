@@ -1,4 +1,4 @@
-export function setRole(user, role, addrole) {
+module.exports.setRole = function(user, role, addrole) {
     if(addrole)
     {
         user.roles.add(role);
