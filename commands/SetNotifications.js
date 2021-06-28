@@ -51,7 +51,7 @@ module.exports = {
                     let target = reaction.message.guild.members.cache.get(user.id);
                     let notif_role = reaction.message.guild.roles.cache.find((role) => {return role.name === `${reaction.emoji.name} Alerts`})
                     if(!notif_role) return;
-                    if(target.roles.cache.find((r) => {return r === role}))
+                    if(target.roles.cache.find((r) => {return r === notif_role}))
                     {
                         setRole(target, notif_role, false);
                         user.send(`** Notifications pour ${reaction.emoji.name} désactivée ! **`).then(() => reaction.users.remove(user.id));
