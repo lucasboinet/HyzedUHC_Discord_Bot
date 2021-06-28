@@ -37,7 +37,10 @@ module.exports = {
                     {
                         let target = reaction.message.guild.members.cache.get(user.id);
                         let rules_role = reaction.message.guild.roles.cache.find((role) => {return role.name === 'Joueur'})
-                        setRole(target, rules_role, true);
+                        if(target && rules_role)
+                        {
+                            setRole(target, rules_role, true);
+                        }
                     }
                 }
             })
@@ -58,7 +61,10 @@ module.exports = {
                     {
                         let target = reaction.message.guild.members.cache.get(user.id);
                         let rules_role = reaction.message.guild.roles.cache.find((role) => {return role.name === 'Joueur'})
-                        setRole(target, rules_role, false);
+                        if(target && rules_role)
+                        {
+                            setRole(target, rules_role, false); 
+                        }
                     }
                 }
             })
