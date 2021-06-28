@@ -50,16 +50,17 @@ module.exports = {
                 {
                     let target = reaction.message.guild.members.cache.get(user.id);
                     let notif_role = reaction.message.guild.roles.cache.find((role) => {return role.name === `${reaction.emoji.name} Alerts`})
+                    let gamemode = gamemodes.find(elem => elem.icon === reaction.emoji.name);
                     if(!notif_role) return;
                     if(target.roles.cache.find((r) => {return r === notif_role}))
                     {
                         setRole(target, notif_role, false);
-                        user.send(`** Notifications pour ${reaction.emoji.name} désactivée ! **`).then(() => reaction.users.remove(user.id));
+                        user.send(`** Notifications pour ${gamemode.icon} ${gamemode.text} désactivée ! **`).then(() => reaction.users.remove(user.id));
                     }
                     else
                     {
                         setRole(target, notif_role, true);
-                        user.send(`** Notifications pour ${reaction.emoji.name} activée ! **`).then(() => reaction.users.remove(user.id));
+                        user.send(`** Notifications pour ${gamemode.icon} ${gamemode.text} activée ! **`).then(() => reaction.users.remove(user.id));
                     }
                 }
             }
