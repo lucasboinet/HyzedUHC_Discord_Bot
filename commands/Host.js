@@ -66,23 +66,6 @@ module.exports = {
                 })
                 .catch(err => console.error("host create: ", err));
             message.delete();
-        }else if(args[0] === 'help')
-        {
-            const embed = new MessageEmbed()
-                .setAuthor('HyzedUHC', 'https://i.imgur.com/VgVtVns.png')
-                .setTitle(`Aide pour la commande !host`)
-                .setThumbnail('https://i.imgur.com/VgVtVns.png')
-                .addFields([
-                    { name: '!host :', value: '\u200B' },
-                    { name: 'create <gamemode> <date>', value: 'Permet d\'annoncer un host' },
-                    { name: '\u200B', value: '\u200B' },
-                    { name: 'gamemode', value: 'lg / aot / ds', inline: true },
-                    { name: 'date', value: 'dd/mm/YYYY hh:mm', inline: true },
-                ])
-                .setFooter('IP: play.hyzed.fr | Mumble: /mumble')
-                .setColor("#9B59B6")
-            message.author.send(embed);
-            message.delete();
         }
     }
 

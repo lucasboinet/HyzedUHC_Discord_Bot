@@ -1,7 +1,7 @@
 const fs = require('fs');//
 const discord = require('discord.js');
 const { token } = require('./utils/token.json');
-const { prefix, notifications_channel, support_channel } = require('./utils/config.json');
+const { prefix, notifications_channel, support_channel, rules_channel } = require('./utils/config.json');
 const client = new discord.Client();
 
 client.commands = new discord.Collection();
@@ -15,6 +15,7 @@ for (const file of commandFiles) {
 client.once('ready', () => {
     client.channels.cache.get(support_channel).send('!setsupport');
     client.channels.cache.get(notifications_channel).send('!setnotif');
+    client.channels.cache.get(rules_channel).send('!setrules');
 })
 
 client.on('message', message => {
@@ -37,11 +38,6 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('Impossible d\'executer cette commande...');
 	}
-})
-
-client.on('guildMemberAdd', async member => {
-    let role = member.guild.roles.cache.find(role => role.name === "Joueur");
-    member.roles.add(role);
 })
 
 client.login(token);
