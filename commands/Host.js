@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { games_channel, gamemodes } = require('../config.json');
+const { games_channel, gamemodes } = require('../utils/config.json');
 
 module.exports = {
     name: 'host',
@@ -7,7 +7,7 @@ module.exports = {
     callback: (message, args) => {
         if(message.channel.id != games_channel) return;
 
-        if(args[0] == 'create')
+        if(args[0] === 'create')
         {
             const embed = new MessageEmbed()
                 .setAuthor('Annonce Game', 'https://i.imgur.com/VgVtVns.png')
@@ -22,15 +22,18 @@ module.exports = {
                 .then(msg => msg.delete())
                 .catch(err => console.error("host create: ", err));
             message.delete();
-        }else if(args[0] == 'help')
+        }else if(args[0] === 'help')
         {
             const embed = new MessageEmbed()
                 .setAuthor('HyzedUHC', 'https://i.imgur.com/VgVtVns.png')
-                .setTitle(`Aide création d'host`)
+                .setTitle(`Aide pour la commande !host`)
                 .setThumbnail('https://i.imgur.com/VgVtVns.png')
                 .addFields([
-                    { name: '!host create <gamemode=[lg|aot|ds]> <date=[dd/mm/YYYY hh:mm]>', value: 'Permet d\'annoncer un host' },
-                    { name: '!host delete <id>', value: 'Permet de supprimer l\'annonce  d\'un host' }
+                    { name: '!host :', value: '\u200B' },
+                    { name: 'create <gamemode> <date>', value: 'Permet d\'annoncer un host' },
+                    { name: '\u200B', value: '\u200B' },
+                    { name: 'gamemode', value: 'lg / aot / ds', inline: true },
+                    { name: 'date', value: 'dd/mm/YYYY hh:mm', inline: true },
                 ])
                 .setFooter('IP: play.hyzed.fr | Mumble: /mumble')
                 .setColor("#9B59B6")

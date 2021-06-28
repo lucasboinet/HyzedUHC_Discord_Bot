@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { support_channel } = require('../config.json');
+const { support_channel } = require('../utils/config.json');
 
 module.exports = {
     name: 'setsupport',
