@@ -13,13 +13,18 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log("ready")
     client.channels.cache.get(support_channel).send('!setsupport');
     client.channels.cache.get(notifications_channel).send('!setnotif');
 })
 
 client.on('message', message => {
     if(!message.content.startsWith(prefix)) return;
+
+    if(message.content === prefix+"stop" && (message.author.id === '578995125892415558' || message.author.id === '208147912839004161'))
+    {
+        message.delete();
+        process.exit(0);
+    }
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
