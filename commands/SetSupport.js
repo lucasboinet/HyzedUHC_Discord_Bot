@@ -11,7 +11,7 @@ module.exports = {
             {
                 const embed = new MessageEmbed()
                 .setAuthor('Support', 'https://i.imgur.com/VgVtVns.png')
-                .setDescription('> Pour ouvrir un ticket, veuillez réagir à ce message')
+                .setDescription('Pour ouvrir un ticket, veuillez réagir à ce message')
                 .setFooter('Quelqu\'un vous répondra dans les plus brefs délai')
                 .setColor("#9B59B6");
 
