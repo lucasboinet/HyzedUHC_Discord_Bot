@@ -12,7 +12,8 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setAuthor('Support', 'https://i.imgur.com/VgVtVns.png')
                 .setDescription('> Pour ouvrir un ticket, veuillez réagir à ce message')
-                .setColor("#9B59B6")
+                .setFooter('Quelqu\'un vous répondra dans les plus brefs délai')
+                .setColor("#9B59B6");
 
                 message.channel.bulkDelete(99).then(() => {
                     message.channel.send(embed).then((msg) => {
@@ -73,9 +74,6 @@ module.exports = {
                         const embed = new MessageEmbed()
                         .setAuthor(`Ticket ${user.tag}`, 'https://i.imgur.com/VgVtVns.png')
                         .setDescription('**Vous avez ouvert un ticket, merci d\'indiquer les informations suivantes :**\n\n\n Pseudo en jeu :\n\n  Personne(s) impliqué(s) :\n\n  Explication du problème : ')
-                        .addFields([
-                            {name: '\u200B', value: 'Quelqu\'un vous répondra dans les plus brefs délai'}
-                        ])
                         .setFooter('Pour fermer le ticket, mettez la réaction ci-dessous')
                         .setColor("#9B59B6")
                         channel.send(embed).then(message => message.react('✅'));
