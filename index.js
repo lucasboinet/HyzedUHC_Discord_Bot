@@ -23,7 +23,7 @@ client.on('message', message => {
     if(message.content === prefix+"stop" && (message.author.id === '578995125892415558' || message.author.id === '208147912839004161'))
     {
         message.delete();
-        process.exit(0);
+        process.exit();
     }
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
