@@ -13,7 +13,7 @@ module.exports = {
             let date;
             if(!args[1] || !args[2] || !args[3])
             {
-                message.author.send('Verifier les arguments! Voir !host help pour plus d\'informations');
+                message.author.send('Verifier les arguments! Voir !help pour plus d\'informations');
                 message.delete();
                 return;
             }
@@ -21,7 +21,7 @@ module.exports = {
             gamemode = gamemodes.find(g => g.slug == args[1]);
 
             if(!gamemode){
-                message.author.send(`Aucun mode de jeu correspondant à ${args[1]}! Voir !host help pour plus d'informations`);
+                message.author.send(`Aucun mode de jeu correspondant à ${args[1]}! Voir !help pour plus d'informations`);
                 message.delete();
                 return;
             }
@@ -30,7 +30,14 @@ module.exports = {
 
             if(date === 'Invalid Date')
             {
-                message.author.send(`Format de date incorrect! Voir !host help pour plus d'informations`);
+                message.author.send(`Format de date incorrect! Voir !help pour plus d'informations`);
+                message.delete();
+                return;
+            }
+
+            if(date < new Date())
+            {
+                message.author.send(`Vous ne pouvez pas mettre une date déjà passée! Voir !help pour plus d'informations`);
                 message.delete();
                 return;
             }

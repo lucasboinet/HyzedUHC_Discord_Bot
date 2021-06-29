@@ -16,6 +16,8 @@ client.once('ready', () => {
     client.channels.cache.get(support_channel).send('!setsupport');
     client.channels.cache.get(notifications_channel).send('!setnotif');
     client.channels.cache.get(rules_channel).send('!setrules');
+
+    client.user.setActivity('play.hyzed.fr', { type: 'WATCHING' })
 })
 
 client.on('message', message => {
