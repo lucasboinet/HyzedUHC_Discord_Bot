@@ -10,9 +10,10 @@ module.exports = {
                 .setTitle(`Retrouve nous ici : `)
                 .setThumbnail('https://i.imgur.com/VgVtVns.png')
                 .addFields([
-                    { name: 'Site web :', value: 'url' },
-                    { name: 'Twitch : ', value: 'url' },
-                    { name: 'Youtube : ', value: 'url' },
+                    { name: 'Site web :', value: '[hyzed.fr](https://hyzed.fr/)' },
+                    { name: 'Twitch : ', value: '[twitch.tv](https://www.twitch.tv/hyzed__)' },
+                    { name: 'Twitter : ', value: '[twitter.com]()' },
+                    { name: 'Youtube : ', value: '[youtube.com](https://www.youtube.com/channel/UCxtXmQTvgkK5a2y1s9K1s3g)' },
                 ])
                 .setFooter('IP: play.hyzed.fr | Mumble: /mumble')
                 .setColor("#9B59B6")
