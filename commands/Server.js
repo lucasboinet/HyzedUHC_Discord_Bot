@@ -33,27 +33,27 @@ module.exports = {
         switch(servername)
         {
             case "lg":
-                message.channel.send("Machine LG " + status); 
+                message.channel.send("Machine LG : " + status); 
                 changeStatus(1, status)
                 break;
             case "hub":
-                message.channel.send("Machine HUB " + status); 
+                message.channel.send("Machine HUB : " + status); 
                 changeStatus(0, status)
                 break;
             case "pvp":
-                message.channel.send("Machine PVP " + status);   
+                message.channel.send("Machine PVP : " + status);   
                 changeStatus(3, status)
                 break;
             case "uhc":
-                message.channel.send("Machine UHC " + status); 
+                message.channel.send("Machine UHC : " + status); 
                 changeStatus(2, status)
                 break;
             case "rushffa":
-                message.channel.send("Machine RUSHFFA " + status); 
+                message.channel.send("Machine RUSHFFA : " + status); 
                 changeStatus(7, status)
                 break;
             case "build":
-                message.channel.send("Machine BUILD " + status); 
+                message.channel.send("Machine BUILD : " + status); 
                 changeStatus(6, status)
                 break;
         }
