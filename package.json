@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "node-fetch": "^2.6.1",
+    "pterodactyl.js": "^2.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

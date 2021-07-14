@@ -17,22 +17,10 @@ client.once('ready', () => {
     client.channels.cache.get(notifications_channel).send('!setnotif');
     client.channels.cache.get(rules_channel).send('!setrules');
 
-    let roles = client.guilds.cache.get('858510532118052884').roles;
-    let joueur = roles.cache.find(role => role.name === 'Joueur');
-
     client.user.setActivity('play.hyzed.fr', { type: 'WATCHING' })
 })
 
 client.on('message', message => {
-    if(!message.author.bot)
-    {
-        let guildmember = message.channel.guild.members.cache.find(member => member.id === message.author.id);
-        console.log("===========================================")
-        guildmember._roles.forEach(roleid => {
-            console.log(message.channel.guild.roles.cache.get(roleid))
-        });
-    }
-
     if(!message.content.startsWith(prefix)) return;
 
     if(message.content === prefix+"stop" && (message.author.id === '578995125892415558' || message.author.id === '208147912839004161'))
