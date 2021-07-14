@@ -1,15 +1,21 @@
+
 const { MessageEmbed } = require('discord.js');
-const Pterodactyl = require('pterodactyl.js');
-const serveur = new Pterodactyl.Builder()
-    .setURL('https://panel.lguhc-astra.tk/')
-    .setAPIKey('h14lbdl7Tisbtsixoafgg62SWMQnJFN9muGg4IYLkNDq7pj8')
-    .asUser();
 
 module.exports = {
-    name: 'server',
-    description: "server commands",
+    name: 'help',
+    description: "Commands list",
     callback: (message, args) => {
-        let servername = args.shift();
-        console.log(servername)
+        const embed = new MessageEmbed()
+                .setAuthor('HyzedUHC', 'https://i.imgur.com/VgVtVns.png')
+                .setTitle(`Liste des commandes`)
+                .setThumbnail('https://i.imgur.com/VgVtVns.png')
+                .addFields([
+                    { name: '!host :', value: '\u200B' },
+                    { name: 'create <gamemode> <date>', value: 'Permet d\'annoncer un host avec \n gamemode<lg|aot|ds> et date<dd/mm/yyy xx:xx>' },
+                ])
+                .setFooter('IP: play.hyzed.fr | Mumble: /mumble')
+                .setColor("#9B59B6")
+            message.author.send(embed);
+            message.delete();
     }
 }
